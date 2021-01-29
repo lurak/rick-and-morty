@@ -1,0 +1,39 @@
+.Home {
+  text-align: center;
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 438px;
+    height: 129px;
+    margin: 0 48px;
+  }
+
+  &__filters {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding-bottom: 64px;
+  }
+
+  &__heroSearch {
+    font-size: 24px;
+  }
+
+  &__resultContainer {
+    background-color: #0a0a28;
+  }
+
+  &__cardList {
+    display: flex;
+    justify-content: center;
+    max-width: 1400px;
+    margin: auto;
+    flex-wrap: wrap;
+    padding-top: 80px;
+  }
+}

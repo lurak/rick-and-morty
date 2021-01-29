@@ -1,0 +1,62 @@
+.DetailedUser {
+  &__ImageContainer {
+    display: inline-block;
+    margin: 0 48px 0 120px;
+    vertical-align: top;
+    height: 470px;
+  }
+
+  &__tag {
+    display: flex;
+    align-items: center;
+    padding-bottom: 33px;
+  }
+
+  &__menu {
+    font-weight: bold;
+    padding-left: 120px;
+    padding-bottom: 44px;
+    padding-top: 48px;
+  }
+
+  &__link_active {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--cta);
+  }
+
+  &__Image {
+    display: inline-block;
+    border-radius: 12px;
+    width: 282px;
+    height: 282px;
+  }
+
+  &__Description {
+    display: inline-block;
+    margin-right: 48px;
+    line-height: 18px;
+    height: 470px;
+  }
+
+  &__MainInfo {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  &__head {
+    font-weight: bold;
+    font-size: 56px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+  }
+
+  &__header {
+    padding-top: 32px;
+  }
+}

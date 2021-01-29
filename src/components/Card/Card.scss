@@ -1,0 +1,41 @@
+.Card {
+  width: 282px;
+  height: 502px;
+  border-radius: 12px;
+  background: #2a2a42;
+  margin: 12px;
+
+  &__image {
+    width: 282px;
+    height: 282px;
+    border-radius: 12px 12px 0px 0px;
+  }
+  &__content {
+    text-align: left;
+    padding: 0 16px;
+  }
+
+  &__name {
+    color: white;
+    font-size: 24px;
+    padding-top: 24px;
+    text-decoration: none;
+  }
+
+  &__tags {
+    display: flex;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 24px;
+  }
+
+  &__infoLabel {
+    color: #9b9cab;
+    margin: 0;
+  }
+
+  &__infoValue {
+    margin: 0;
+    margin-bottom: 16px;
+  }
+}

@@ -1,0 +1,20 @@
+:root {
+  --cta: #3f8bfd;
+
+  --text-dark: #0a0a28;
+  --text-light: white;
+  --text-gray: #9b9cab;
+
+  --background-light: #f3f7fd;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto" sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
