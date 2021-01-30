@@ -1,15 +1,33 @@
+import { useState, useEffect } from "react";
 import { parseJSON } from "date-fns";
 import { NavLink, useParams } from "react-router-dom";
-import { PropTypes } from "prop-types";
 import Tag from "../../components/Tag";
 import "./DetailedUser.scss";
 import Header from "../../components/Header";
 import EpisodeList from "../../components/EpisodesList";
 import Info from "../../components/Info";
+import { getCharacter } from "../../api";
 
-const DetailedUser = ({ selectCharacter }) => {
+
+const DetailedUser = ( ) => {
+
+  const [character, setCharacter] = useState();
+
   const { id } = useParams();
-  const character = selectCharacter(Number(id));
+
+  useEffect(() =>{
+    loadCharacter(id)
+  }, [id]);
+
+  const loadCharacter = async (id) =>{
+    const item = await getCharacter(id);
+    if (item.error){
+      console.log("Error:" , item.error)
+    }
+    else{
+      setCharacter(item);
+    }
+  };
 
   const { name, image, species, origin, location, status, gender, episode, created } = character || {};
 
@@ -58,8 +76,5 @@ const DetailedUser = ({ selectCharacter }) => {
   );
 };
 
-DetailedUser.propTypes = {
-  selectCharacter: PropTypes.func.isRequired,
-};
 
 export default DetailedUser;

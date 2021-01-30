@@ -1,12 +1,13 @@
-import { useState } from "react";
-import { PropTypes } from "prop-types";
+import { useState, useEffect, useCallback } from "react";
+import _ from "lodash";
 
 import Search from "../../components/Search";
 import Select from "../../components/Select";
 import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
 import "./Home.scss";
 import Card from "../../components/Card";
-import Panel from "../../components/Panel/Panel";
+import { getCharacters } from "../../api";
+import Pagination from "../../components/Pagination";
 
 const statusOptions = [
   { valus: "", label: "all" },
@@ -20,13 +21,38 @@ const genderOptions = [
   { value: "female", label: "female" },
 ];
 
-function Home({ characters }) {
-  const [characterName, setCharacterName] = useState("");
+function Home() {
+  const [name, setName] = useState("");
   const [gender, setGender] = useState("");
   const [status, setStatus] = useState("");
-   //const filterStatus = () =>{
-  //    characters = characters?.filter(character => character.status === status)
-  // }
+  const [characters, setCharacters] = useState();
+  const [queryName, setQueryName] = useState("");
+
+
+  const delayQuery = useCallback(_.debounce(setQueryName, 500), [setQueryName])
+
+  useEffect(() =>{
+    loadCharacters({
+      ...(name && {name: queryName}),
+      ...(gender && {gender}),
+      ...(status && {status}),
+    })
+  }, [queryName, gender, status]);
+
+  const loadCharacters = async params =>{
+    const items = await getCharacters(params);
+    if (items.error){
+      console.log("Error:" , items.error)
+    }
+    else{
+      setCharacters(items?.results);
+    }
+  };
+
+  const onNameChange = (value) => {
+    setName(value);
+    delayQuery(value);
+  }
 
   const renderCharactet = (character) => <Card {...character} key={character.id} />;
   return (
@@ -38,38 +64,18 @@ function Home({ characters }) {
         <span>universe</span>
       </h1>
       .
-      <Search className="Home__heroSearch" value={characterName} setValue={setCharacterName} />
+      <Search className="Home__heroSearch" value={name} setValue={onNameChange} />
       <div className="Home__filters">
         <Select label="Status" value={status} handleSelect={setStatus} options={statusOptions} />
         <Select label="Gender " value={gender} handleSelect={setGender} options={genderOptions} />
       </div>
       <div className="Home__resultContainer">
         <div className="Home__cardList">{characters?.map(renderCharactet)}</div>
-        <Panel />
+        <Pagination pages={5} />
       </div>
     </div>
   );
 }
 
-Home.propTypes = {
-  characters: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      status: PropTypes.string.isRequired,
-      species: PropTypes.string.isRequired,
-      gender: PropTypes.oneOf(["Male", "Female", "unknown", "Genderless"]),
-      origin: PropTypes.shape({
-        url: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-      }),
-      location: PropTypes.shape({
-        url: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-      }),
-      image: PropTypes.string.isRequired,
-      id: PropTypes.number.isRequired,
-    })
-  ),
-};
 
 export default Home;
