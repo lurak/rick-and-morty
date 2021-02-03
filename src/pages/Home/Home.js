@@ -27,25 +27,32 @@ function Home() {
   const [status, setStatus] = useState("");
   const [characters, setCharacters] = useState();
   const [queryName, setQueryName] = useState("");
+  const [currentPage, setCurrentPage] = useState(0);
+  const [pages, setPages] = useState(0);
 
 
   const delayQuery = useCallback(_.debounce(setQueryName, 500), [setQueryName])
 
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [name, status, gender]);
+
   useEffect(() =>{
-    loadCharacters({
+    loadCharacters(currentPage, {
       ...(name && {name: queryName}),
       ...(gender && {gender}),
       ...(status && {status}),
     })
-  }, [queryName, gender, status]);
+  }, [queryName, gender, status, currentPage]);
 
-  const loadCharacters = async params =>{
-    const items = await getCharacters(params);
+  const loadCharacters = async (page = 0 , params) =>{
+    const items = await getCharacters({page: page + 1, ...params});
     if (items.error){
       console.log("Error:" , items.error)
     }
     else{
       setCharacters(items?.results);
+      setPages(items?.info?.pages || 0)
     }
   };
 
@@ -71,7 +78,7 @@ function Home() {
       </div>
       <div className="Home__resultContainer">
         <div className="Home__cardList">{characters?.map(renderCharactet)}</div>
-        <Pagination pages={5} />
+        <Pagination pages={pages} setCurrentPage={setCurrentPage} currentPage={currentPage} />
       </div>
     </div>
   );
