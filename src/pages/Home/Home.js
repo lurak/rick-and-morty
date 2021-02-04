@@ -30,36 +30,34 @@ function Home() {
   const [currentPage, setCurrentPage] = useState(0);
   const [pages, setPages] = useState(0);
 
-
-  const delayQuery = useCallback(_.debounce(setQueryName, 500), [setQueryName])
+  const delayQuery = useCallback(_.debounce(setQueryName, 500), [setQueryName]);
 
   useEffect(() => {
     setCurrentPage(0);
   }, [name, status, gender]);
 
-  useEffect(() =>{
+  useEffect(() => {
     loadCharacters(currentPage, {
-      ...(name && {name: queryName}),
-      ...(gender && {gender}),
-      ...(status && {status}),
-    })
+      ...(name && { name: queryName }),
+      ...(gender && { gender }),
+      ...(status && { status }),
+    });
   }, [queryName, gender, status, currentPage]);
 
-  const loadCharacters = async (page = 0 , params) =>{
-    const items = await getCharacters({page: page + 1, ...params});
-    if (items.error){
-      console.log("Error:" , items.error)
-    }
-    else{
+  const loadCharacters = async (page = 0, params) => {
+    const items = await getCharacters({ page: page + 1, ...params });
+    if (items.error) {
+      console.log("Error:", items.error);
+    } else {
       setCharacters(items?.results);
-      setPages(items?.info?.pages || 0)
+      setPages(items?.info?.pages || 0);
     }
   };
 
   const onNameChange = (value) => {
     setName(value);
     delayQuery(value);
-  }
+  };
 
   const renderCharactet = (character) => <Card {...character} key={character.id} />;
   return (
@@ -83,6 +81,5 @@ function Home() {
     </div>
   );
 }
-
 
 export default Home;

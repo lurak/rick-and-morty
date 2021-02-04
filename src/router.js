@@ -3,7 +3,6 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Home from "./pages/Home";
 import DetailedUser from "./pages/DetailedUser";
 
-
 const Router = () => {
   return (
     <BrowserRouter>

@@ -7,24 +7,22 @@ import Header from "../../components/Header";
 import EpisodeList from "../../components/EpisodesList";
 import Info from "../../components/Info";
 import { getCharacter } from "../../api";
+import EpisodeInfo from "../../components/EpisodeInfo/EpisodeInfo";
 
-
-const DetailedUser = ( ) => {
-
+const DetailedUser = () => {
   const [character, setCharacter] = useState();
 
   const { id } = useParams();
 
-  useEffect(() =>{
-    loadCharacter(id)
+  useEffect(() => {
+    loadCharacter(id);
   }, [id]);
 
-  const loadCharacter = async (id) =>{
+  const loadCharacter = async (id) => {
     const item = await getCharacter(id);
-    if (item.error){
-      console.log("Error:" , item.error)
-    }
-    else{
+    if (item.error) {
+      console.log("Error:", item.error);
+    } else {
       setCharacter(item);
     }
   };
@@ -66,15 +64,14 @@ const DetailedUser = ( ) => {
           <Info header="Origin" info={origin.name} />
           <Info header="Birthday" info={String(parseJSON(created)).substring(3, 15)} />
           <Info header="Last known location" info={location.name} />
-          <Info header="First seen in:" info={episode[0]} />
+          <EpisodeInfo episode={episode} />
         </div>
-        <EpisodeList episodes={episode} />
+        <EpisodeList episodes={episode.slice(0, 5)} />
       </div>
     </div>
   ) : (
     <div className="DetailedUser">Go to home page!</div>
   );
 };
-
 
 export default DetailedUser;
