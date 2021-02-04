@@ -1,6 +1,5 @@
 .Header {
   display: flex;
-  justify-content: center;
   padding-left: 120px;
   &__logo {
     width: 190px;
@@ -8,8 +7,9 @@
     padding-top: 20px;
     padding-right: 130px;
   }
-  &__headerSearch {
-    padding-left: 500px;
-    height: 56px;
+  &__quotes {
+    font-size: 200%;
+    font-weight: bold;
+    // color: var(--cta);
   }
 }
