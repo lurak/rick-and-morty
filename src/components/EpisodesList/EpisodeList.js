@@ -1,9 +1,11 @@
 import "./EpisodeList.scss";
-import { getEpisodes, getEpisode } from "../../api";
+import { getEpisodes } from "../../api";
 import { useState, useEffect } from "react";
 import { PropTypes } from "prop-types";
+import { Link } from "react-router-dom";
 
 const EpisodeList = ({ episodes }) => {
+  console.log(episodes);
   const numbers = Array();
   for (let i = 0; i < episodes.length; i++) {
     if (episodes[i][episodes[i].length - 2] === "/") {
@@ -32,7 +34,9 @@ const EpisodeList = ({ episodes }) => {
       <p className="EpisodeList__infoLabel">Episodse:</p>
       {episodeNames.map((episode) => (
         <p key={episode} className="EpisodeList__infoLabelEp">
-          {episode.name}
+          <Link to={`/episode/${episode.id}`} className="EpisodeList__link">
+            {episode.name}
+          </Link>
         </p>
       ))}
     </div>

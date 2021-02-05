@@ -10,10 +10,10 @@ const EpisodeInfo = ({ episode }) => {
 
   const loadEpisode = async (episode) => {
     const item = await getEpisode(episode);
-    setEpisodeName(item.name);
+    setEpisodeName(item);
   };
 
-  return <Info header="First seen in:" info={episodeName} />;
+  return <Info header="First seen in:" info={episodeName.name} />;
 };
 
 export default EpisodeInfo;

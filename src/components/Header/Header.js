@@ -28,7 +28,6 @@ const Header = () => {
       }
       console.log("This will run every second!");
       setQuote(quotes[index]);
-      console.log(quote);
       index = index + 1;
     }, 5000);
     return () => clearInterval(interval);

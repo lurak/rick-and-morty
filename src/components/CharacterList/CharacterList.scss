@@ -1,4 +1,4 @@
-.EpisodeList {
+.CharacterList {
   display: inline-block;
   vertical-align: top;
   padding-left: 200px;
@@ -10,9 +10,5 @@
 
   &__infoLabelEp {
     margin: 0;
-  }
-  &__link {
-    text-decoration: none;
-    color: black;
   }
 }
