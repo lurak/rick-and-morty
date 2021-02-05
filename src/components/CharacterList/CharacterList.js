@@ -1,6 +1,7 @@
 import { getCharacter } from "../../api";
 import "./CharacterList.scss";
 import { useState, useEffect } from "react";
+import {Link} from "react-router-dom";
 
 const CharacterList = ({ characters }) => {
   const indexes = Array();
@@ -26,7 +27,9 @@ const CharacterList = ({ characters }) => {
       <p className="CharacterList__infoLabel">Episodse:</p>
       {charactersNames?.map((character) => (
         <p key={character.id} className="CharacterList__infoLabelEp">
+          <Link to={`/character/${character.id}`} className="CharacterList__link">
           {character.name}
+          </Link>
         </p>
       ))}
     </div>

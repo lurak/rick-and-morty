@@ -1,11 +1,12 @@
 import "./Episode.scss";
-import Photo from "../../assets/images/screen-7.jpg";
+import Photo from "../../assets/images/episode.jpg";
 import Header from "../../components/Header";
 import { NavLink, useParams } from "react-router-dom";
 import Info from "../../components/Info";
 import CharacterList from "../../components/CharacterList";
 import { useState, useEffect } from "react";
 import { getEpisodes } from "../../api";
+import ErrorPage from "../ErrorPage";
 
 const Episode = () => {
   const { id } = useParams();
@@ -49,7 +50,7 @@ const Episode = () => {
       </div>
     </div>
   ) : (
-    <div className="DetailedUser">Go to home page!</div>
+     <ErrorPage/>
   );
 };
 
