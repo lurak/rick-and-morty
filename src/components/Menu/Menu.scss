@@ -1,0 +1,17 @@
+.Menu {
+    font-weight: bold;
+    padding-left: 120px;
+    padding-bottom: 44px;
+    padding-top: 48px;
+
+  &__link_active {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--cta);
+  }
+}

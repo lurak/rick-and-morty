@@ -7,6 +7,7 @@ import CharacterList from "../../components/CharacterList";
 import { useState, useEffect } from "react";
 import { getEpisodes } from "../../api";
 import ErrorPage from "../ErrorPage";
+import Menu from "../../components/Menu/Menu";
 
 const Episode = () => {
   const { id } = useParams();
@@ -29,15 +30,7 @@ const Episode = () => {
       <div className="Episode__header">
         <Header />
       </div>
-      <div className="Episode__menu">
-        <NavLink exact to="/" className="Episode__link" activeClassName='"Episode__menu_active'>
-          Home
-        </NavLink>{" "}
-        {`|   `}
-        <NavLink exact to="/character" className="Episode__link_active" activeClassName='"Episode__menu_active'>
-          # {name}{" "}
-        </NavLink>
-      </div>
+      <Menu name={name} />
       <div className="Episode__ImageContainer">
         <img src={Photo} className="Episode__Image" alt="" />
       </div>

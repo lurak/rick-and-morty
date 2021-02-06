@@ -8,6 +8,8 @@ import EpisodeList from "../../components/EpisodesList";
 import Info from "../../components/Info";
 import { getCharacter } from "../../api";
 import EpisodeInfo from "../../components/EpisodeInfo/EpisodeInfo";
+import ErrorPage from "../ErrorPage";
+import Menu from "../../components/Menu/Menu";
 
 const DetailedUser = () => {
   const [character, setCharacter] = useState();
@@ -34,20 +36,7 @@ const DetailedUser = () => {
       <div className="DetailedUser__header">
         <Header />
       </div>
-      <div className="DetailedUser__menu">
-        <NavLink exact to="/" className="DetailedUser__link" activeClassName='"DetailedUser__menu_active'>
-          Home
-        </NavLink>{" "}
-        {`|   `}
-        <NavLink
-          exact
-          to="/character"
-          className="DetailedUser__link_active"
-          activeClassName='"DetailedUser__menu_active'
-        >
-          #{id} {name}
-        </NavLink>
-      </div>
+      <Menu id={id} name={name} />
       <div className="DetailedUser__ImageContainer">
         <img src={image} className="DetailedUser__Image" alt="" />
       </div>
@@ -70,7 +59,7 @@ const DetailedUser = () => {
       </div>
     </div>
   ) : (
-    <div className="DetailedUser">Go to home page!</div>
+    <ErrorPage />
   );
 };
 

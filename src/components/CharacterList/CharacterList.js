@@ -24,7 +24,7 @@ const CharacterList = ({ characters }) => {
   };
   return (
     <div className="CharacterList">
-      <p className="CharacterList__infoLabel">Episodse:</p>
+      <p className="CharacterList__infoLabel">Characters:</p>
       {charactersNames?.map((character) => (
         <p key={character.id} className="CharacterList__infoLabelEp">
           <Link to={`/character/${character.id}`} className="CharacterList__link">

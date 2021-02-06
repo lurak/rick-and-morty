@@ -26,7 +26,6 @@ const Header = () => {
       if (quotes.length == index) {
         index = 0;
       }
-      console.log("This will run every second!");
       setQuote(quotes[index]);
       index = index + 1;
     }, 5000);
