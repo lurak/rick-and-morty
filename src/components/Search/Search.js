@@ -1,5 +1,6 @@
-import "./Search.scss";
 import { PropTypes } from "prop-types";
+
+import "./Search.scss";
 
 const Search = ({ className, value, setValue }) => {
   const handleChange = ({ target: { value } }) => {

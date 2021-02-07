@@ -1,25 +1,24 @@
-.ErrorPage{
+.ErrorPage {
+  &__header {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  &__image {
+    width: 1200px;
+    height: 620px;
+  }
 
-    &__header{
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-    &__image{
-        width: 1200px;
-        height: 620px;
-    }
+  &__image_container {
+    padding-left: 80px;
+  }
 
-    &__image_container{
-        padding-left: 80px;
-    }
-
-    &__text{
-        text-align: center;
-        font-size: 40px;
-        font-weight: bold;
-        color: white;
-    }
-    &__back{
-        background: #2a2a42;
-    }
+  &__text {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+  }
+  &__back {
+    background: #2a2a42;
+  }
 }

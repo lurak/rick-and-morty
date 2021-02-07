@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { PropTypes } from "prop-types";
+
 import "./Select.scss";
 
 const Select = ({ value, handleSelect, options, label }) => {

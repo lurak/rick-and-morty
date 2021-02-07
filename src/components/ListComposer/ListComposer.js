@@ -1,10 +1,11 @@
-import "./ListComposer.scss";
 import { PropTypes } from "prop-types";
 import { useState, useEffect } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import "./ListComposer.scss";
 
 const ListComposer = ({ elements, getter, label, url }) => {
-  const indexes = Array();
+  const indexes = [];
   for (let i = 0; i < elements?.length; i++) {
     if (elements[i][elements[i].length - 2] === "/") {
       indexes.push(Number(elements[i].substring(elements[i].length - 1, elements[i].length)));
@@ -13,19 +14,18 @@ const ListComposer = ({ elements, getter, label, url }) => {
     }
   }
 
-  
   const [items, setItems] = useState([]);
   useEffect(() => {
     loadItems(indexes);
-  }, []);
+  }, [indexes]);
 
   const loadItems = async (ind) => {
     const item = await getter(ind);
     if (ind.length === 1) {
-        setItems(Array(item));
+      setItems(Array(item));
     } else {
-        setItems(item);
-      }
+      setItems(item);
+    }
   };
   return (
     <div className="ListComposer">
@@ -33,7 +33,7 @@ const ListComposer = ({ elements, getter, label, url }) => {
       {items?.map((element) => (
         <p key={element.id} className="ListComposer__infoLabelEp">
           <Link to={`/${url}/${element.id}`} className="ListComposer__link">
-          {element.name}
+            {element.name}
           </Link>
         </p>
       ))}
@@ -43,9 +43,9 @@ const ListComposer = ({ elements, getter, label, url }) => {
 
 ListComposer.propTypes = {
   elements: PropTypes.arrayOf(PropTypes.string),
-  getter : PropTypes.func.isRequired,
+  getter: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired
-}
+  url: PropTypes.string.isRequired,
+};
 
 export default ListComposer;

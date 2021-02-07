@@ -1,5 +1,6 @@
-import "./Info.scss";
 import { PropTypes } from "prop-types";
+
+import "./Info.scss";
 
 const Info = ({ header, info }) => {
   return (
@@ -10,8 +11,8 @@ const Info = ({ header, info }) => {
   );
 };
 
-Info.propType = {
+Info.propTypes = {
   header: PropTypes.string.isRequired,
-  info: PropTypes.string.isRequired,
+  info: PropTypes.string.isRequired
 };
 export default Info;

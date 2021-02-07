@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import "./Header.scss";
-import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
+
 import { useState, useEffect } from "react";
+import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
+
+import "./Header.scss";
 
 const quotes = [
   "''What, So Everyone’s Supposed To Sleep Every Single Night Now?''",
@@ -23,7 +25,7 @@ const Header = () => {
   var index = 0;
   useEffect(() => {
     const interval = setInterval(() => {
-      if (quotes.length == index) {
+      if (quotes.length === index) {
         index = 0;
       }
       setQuote(quotes[index]);

@@ -4,10 +4,11 @@ import _ from "lodash";
 import Search from "../../components/Search";
 import Select from "../../components/Select";
 import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
-import "./Home.scss";
 import Card from "../../components/Card";
 import { getCharacters } from "../../api";
 import Pagination from "../../components/Pagination";
+
+import "./Home.scss";
 
 const statusOptions = [
   { valus: "", label: "all" },

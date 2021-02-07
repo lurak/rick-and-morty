@@ -1,13 +1,15 @@
-import "./Episode.scss";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 import Photo from "../../assets/images/episode.jpg";
 import Header from "../../components/Header";
-import {useParams } from "react-router-dom";
 import Info from "../../components/Info";
-import { useState, useEffect } from "react";
 import { getCharacter, getEpisodes } from "../../api";
 import ErrorPage from "../ErrorPage";
 import Menu from "../../components/Menu/Menu";
 import ListComposer from "../../components/ListComposer";
+
+import "./Episode.scss";
 
 const Episode = () => {
   const { id } = useParams();
@@ -39,11 +41,11 @@ const Episode = () => {
         <div className="Episode__MainInfo">
           <Info header="Air Date" info={air_date} />
         </div>
-        <ListComposer elements={characters?.slice(0, 10)} getter ={getCharacter} label="Characters" url="character" />
+        <ListComposer elements={characters?.slice(0, 10)} getter={getCharacter} label="Characters" url="character" />
       </div>
     </div>
   ) : (
-     <ErrorPage/>
+    <ErrorPage />
   );
 };
 

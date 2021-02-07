@@ -1,19 +1,18 @@
 .ListComposer {
-    display: inline-block;
-    vertical-align: top;
-    padding-left: 200px;
-  
-    &__infoLabel {
-      color: #9b9cab;
-      margin: 0;
-    }
-  
-    &__infoLabelEp {
-      margin: 0;
-    }
-    &__link{
-      text-decoration: none;
-      color: black;
-    }
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 200px;
+
+  &__infoLabel {
+    color: #9b9cab;
+    margin: 0;
   }
-  
+
+  &__infoLabelEp {
+    margin: 0;
+  }
+  &__link {
+    text-decoration: none;
+    color: black;
+  }
+}

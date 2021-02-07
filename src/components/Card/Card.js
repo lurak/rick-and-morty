@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
-import "./Card.scss";
+
 import Tag from "../Tag";
 import Info from "../Info";
+
+import "./Card.scss";
 
 const Card = ({ name, status, gender, location, image, id }) => {
   return (

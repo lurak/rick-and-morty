@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { parseJSON } from "date-fns";
 import { useParams } from "react-router-dom";
+
 import Tag from "../../components/Tag";
-import "./DetailedUser.scss";
 import Header from "../../components/Header";
 import Info from "../../components/Info";
 import { getCharacter, getEpisodes } from "../../api";
@@ -10,6 +10,8 @@ import EpisodeInfo from "../../components/EpisodeInfo";
 import ErrorPage from "../ErrorPage";
 import Menu from "../../components/Menu";
 import ListComposer from "../../components/ListComposer";
+
+import "./DetailedUser.scss";
 
 const DetailedUser = () => {
   const [character, setCharacter] = useState();
@@ -55,7 +57,7 @@ const DetailedUser = () => {
           <Info header="Last known location" info={location.name} />
           <EpisodeInfo episode={episode} />
         </div>
-        <ListComposer elements={episode.slice(0, 5)} getter ={getEpisodes} label="Episodes" url="episode" />
+        <ListComposer elements={episode.slice(0, 5)} getter={getEpisodes} label="Episodes" url="episode" />
       </div>
     </div>
   ) : (

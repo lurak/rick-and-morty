@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { PropTypes } from "prop-types";
+
 import Info from "../../components/Info";
 import { getEpisode } from "../../api";
 
@@ -18,7 +19,7 @@ const EpisodeInfo = ({ episode }) => {
 };
 
 EpisodeInfo.propTypes = {
-  episode: PropTypes.arrayOf(PropTypes.string)
-}
+  episode: PropTypes.arrayOf(PropTypes.string),
+};
 
 export default EpisodeInfo;

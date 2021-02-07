@@ -4,11 +4,6 @@ import _ from "lodash";
 import "./Pagination.scss";
 
 const Pagination = ({ pages, setCurrentPage, currentPage }) => {
-  const PagesArray = _(Array(pages))
-    .fill(null)
-    .map((el, ind) => ind)
-    .value();
-
   const getDisplayedPages = () => {
     if (currentPage - 2 <= 0) return _.range(0, Math.min(5, pages));
     if (currentPage + 2 >= pages) return _.range(Math.max(pages - 5, 0), pages);
@@ -54,11 +49,10 @@ const Pagination = ({ pages, setCurrentPage, currentPage }) => {
   );
 };
 
-
 Pagination.propTypes = {
   pages: PropTypes.number.isRequired,
   setCurrentPage: PropTypes.func.isRequired,
-  currentPage: PropTypes.number.isRequired
-}
+  currentPage: PropTypes.number.isRequired,
+};
 
 export default Pagination;
