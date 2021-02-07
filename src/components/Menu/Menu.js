@@ -1,4 +1,5 @@
 import "./Menu.scss"
+import { PropTypes } from "prop-types";
 import { NavLink} from "react-router-dom";
 
 const Menu = ({id, name}) =>{
@@ -19,5 +20,10 @@ const Menu = ({id, name}) =>{
       </div>
     );
 };
+
+Menu.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired
+}
 
 export default Menu

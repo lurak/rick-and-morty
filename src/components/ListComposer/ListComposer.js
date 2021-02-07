@@ -1,4 +1,5 @@
 import "./ListComposer.scss";
+import { PropTypes } from "prop-types";
 import { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
 
@@ -39,5 +40,12 @@ const ListComposer = ({ elements, getter, label, url }) => {
     </div>
   );
 };
+
+ListComposer.propTypes = {
+  elements: PropTypes.arrayOf(PropTypes.string),
+  getter : PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
+}
 
 export default ListComposer;

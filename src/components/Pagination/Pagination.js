@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { PropTypes } from "prop-types";
 import _ from "lodash";
 
 import "./Pagination.scss";
@@ -53,5 +53,12 @@ const Pagination = ({ pages, setCurrentPage, currentPage }) => {
     </div>
   );
 };
+
+
+Pagination.propTypes = {
+  pages: PropTypes.number.isRequired,
+  setCurrentPage: PropTypes.func.isRequired,
+  currentPage: PropTypes.number.isRequired
+}
 
 export default Pagination;

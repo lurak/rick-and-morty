@@ -7,7 +7,6 @@ export const getCharacters = async (params) => {
 };
 
 export const getCharacter = async (id) => {
-  console.log(`${SERVER_URL}/character/${id}`);
   const response = await fetch(`${SERVER_URL}/character/${id}`);
   return response.json();
 };
