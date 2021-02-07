@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import { parseJSON } from "date-fns";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Tag from "../../components/Tag";
 import "./DetailedUser.scss";
 import Header from "../../components/Header";
-import EpisodeList from "../../components/EpisodesList";
 import Info from "../../components/Info";
-import { getCharacter } from "../../api";
-import EpisodeInfo from "../../components/EpisodeInfo/EpisodeInfo";
+import { getCharacter, getEpisodes } from "../../api";
+import EpisodeInfo from "../../components/EpisodeInfo";
 import ErrorPage from "../ErrorPage";
-import Menu from "../../components/Menu/Menu";
+import Menu from "../../components/Menu";
+import ListComposer from "../../components/ListComposer";
 
 const DetailedUser = () => {
   const [character, setCharacter] = useState();
@@ -55,7 +55,7 @@ const DetailedUser = () => {
           <Info header="Last known location" info={location.name} />
           <EpisodeInfo episode={episode} />
         </div>
-        <EpisodeList episodes={episode.slice(0, 5)} />
+        <ListComposer elements={episode.slice(0, 5)} getter ={getEpisodes} label="Episodes" url="episode" />
       </div>
     </div>
   ) : (
