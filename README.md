@@ -1,3 +1,11 @@
+# Rick and Morty Project
+
+It is a web-site like a Google for Rick and Morty universe, where you can find every character or episode from series.
+Although you can filter them by status and gender or a name of a character.
+Project use https://rickandmortyapi.com.
+Camel Case is used for variables.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
