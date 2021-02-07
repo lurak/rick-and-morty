@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 
 import Tag from "../Tag";
 import Info from "../Info";
+import { emoji_gender, emoji_status } from "../../utils/consts";
 
 import "./Card.scss";
 
@@ -19,8 +20,9 @@ const Card = ({ name, status, gender, location, image, id }) => {
           <div className="Card__name">{name}</div>
         </Link>
         <div className="Card__tags">
-          <Tag>{gender}</Tag>
-          <Tag>{status}</Tag>
+          <Tag text={status} emoji={emoji_status[status]} />
+          <Tag text={gender} emoji={emoji_gender[gender]} />
+          {/* <Tag>{emoji.status, status}</Tag> */}
         </div>
         <Info header="Last known location" info={location.name} />
         <Info header="First seen in" info={name} />

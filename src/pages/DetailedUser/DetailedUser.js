@@ -10,6 +10,7 @@ import EpisodeInfo from "../../components/EpisodeInfo";
 import ErrorPage from "../ErrorPage";
 import Menu from "../../components/Menu";
 import ListComposer from "../../components/ListComposer";
+import { emoji_gender, emoji_status } from "../../utils/consts";
 
 import "./DetailedUser.scss";
 
@@ -47,8 +48,8 @@ const DetailedUser = () => {
           #{id} {name}
         </div>
         <div className="DetailedUser__tag">
-          <Tag children={status} />
-          <Tag children={gender} />
+          <Tag text={status} emoji={emoji_status[status]} />
+          <Tag text={gender} emoji={emoji_gender[gender]} />
         </div>
         <div className="DetailedUser__MainInfo">
           <Info header="Species" info={species} />
