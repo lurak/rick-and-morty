@@ -4,8 +4,13 @@ import { Link } from "react-router-dom";
 
 import "./ListComposer.scss";
 
+// TODO: what does this element do?
+// Try to find a more comprehensive name :)
 const ListComposer = ({ elements, getter, label, url }) => {
   const indexes = [];
+  // TODO: it's cleaner and prettier with array map
+  // And this way, you will return a new array, instead of modifying existing
+  // Try to rewrite it
   for (let i = 0; i < elements?.length; i++) {
     if (elements[i][elements[i].length - 2] === "/") {
       indexes.push(Number(elements[i].substring(elements[i].length - 1, elements[i].length)));
@@ -20,7 +25,8 @@ const ListComposer = ({ elements, getter, label, url }) => {
   }, [indexes]);
 
   const loadItems = async (ind) => {
-    const item = await getter(ind);
+    // Todo: is this a fetch call ? maybe something like getEpisode would be a better name
+    const item = await getter(ind); 
     if (ind.length === 1) {
       setItems(Array(item));
     } else {

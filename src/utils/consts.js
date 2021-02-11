@@ -1,4 +1,7 @@
+// TODO: you forgot to clean this up :) Now you have it in .env file
 export const SERVER_URL = "https://rickandmortyapi.com/api";
+
+// TODO: not so important, but I would write all the common consts in upper case 
 export const emoji_status = {
   Dead: "☠️️",
   Alive: "😎",

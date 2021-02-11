@@ -54,6 +54,7 @@ const DetailedUser = () => {
         <div className="DetailedUser__MainInfo">
           <Info header="Species" info={species} />
           <Info header="Origin" info={origin.name} />
+
           <Info header="Birthday" info={String(parseJSON(created)).substring(3, 15)} />
           <Info header="Last known location" info={location.name} />
           <EpisodeInfo episode={episode} />

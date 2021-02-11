@@ -8,7 +8,9 @@ import "./Header.scss";
 
 const Header = () => {
   const [quote, setQuote] = useState(quotes[0]);
-  var index = 0;
+  // TODO: don't use var's, they are bad :)
+  // Read about ES6, and why const / let are better then var
+  var index = 0; 
   useEffect(() => {
     const interval = setInterval(() => {
       if (quotes.length === index) {
@@ -16,7 +18,7 @@ const Header = () => {
       }
       setQuote(quotes[index]);
       index = index + 1;
-    }, 5000);
+    }, 5000); // TODO: such things are better to keep in a variable
     return () => clearInterval(interval);
   }, []);
 
