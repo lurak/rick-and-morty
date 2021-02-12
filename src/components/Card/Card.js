@@ -22,8 +22,6 @@ const Card = ({ name, status, gender, location, image, id }) => {
         <div className="Card__tags">
           <Tag text={status} emoji={emoji_status[status]} />
           <Tag text={gender} emoji={emoji_gender[gender]} />
-          {/* TODO: clean this comment up, if unneeded */}
-          {/* <Tag>{emoji.status, status}</Tag> */}
         </div>
         <Info header="Last known location" info={location.name} />
         <Info header="First seen in" info={name} />

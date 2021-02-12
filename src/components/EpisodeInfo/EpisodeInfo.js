@@ -14,7 +14,7 @@ const EpisodeInfo = ({ episode }) => {
     const item = await getEpisode(episode);
     setEpisodeName(item);
   };
-  
+
   return <Info header="First seen in:" info={episodeName.name} />;
 };
 

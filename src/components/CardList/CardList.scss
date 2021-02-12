@@ -1,0 +1,12 @@
+.CardList {
+  background-color: #0a0a28;
+
+  &__List {
+    display: flex;
+    justify-content: center;
+    max-width: 1400px;
+    margin: auto;
+    flex-wrap: wrap;
+    padding-top: 80px;
+  }
+}

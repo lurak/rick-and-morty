@@ -12,7 +12,7 @@ const ErrorPage = () => {
         <Header />
       </div>
       <div className="ErrorPage__back">
-        <div className="ErrorPage__text">SORRY, PLEASE WAIT!!!OR GO HOME!!</div>
+        <div className="ErrorPage__text">SORRY, SOMETHING IS WRONG</div>
         <div className="ErrorPage__image_container">
           <img src={Photo} alt="" className="ErrorPage__image" />
         </div>

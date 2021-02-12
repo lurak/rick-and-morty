@@ -8,8 +8,7 @@ const Search = ({ className, value, setValue }) => {
   };
   return (
     <div className={`Search ${className}`}>
-      <input className="Search__input" placeholder="search by name" value={value} onChange={handleChange} />     
-      {/*<button className="Search__button">Find character </button>*/}
+      <input className="Search__input" placeholder="search by name" value={value} onChange={handleChange} />
     </div>
   );
 };

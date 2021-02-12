@@ -13,6 +13,6 @@ const Info = ({ header, info }) => {
 
 Info.propTypes = {
   header: PropTypes.string.isRequired,
-  info: PropTypes.string.isRequired,
+  info: PropTypes.string,
 };
 export default Info;

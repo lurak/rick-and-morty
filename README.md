@@ -5,7 +5,6 @@ Although you can filter them by status and gender or a name of a character.
 Project use https://rickandmortyapi.com.
 Camel Case is used for variables.
 
-
 # TODO
 
 1. Maybe you can clean up default react README, e.g. starting from section "Read more"
@@ -13,10 +12,11 @@ Camel Case is used for variables.
 3. There is some small bug in pagination -- when you click on the last page button, the arrow should be disabled (currently I can click and I go to the next non-existing index). This is probably some error with list indexes :)
 4. Please, fix some styles:
 
-    - font sizes / font-family / font color in inputs
-    - margins between Tags
-    - add some margin-bottom under the Pagination
-    - vertically align Rick & Morty's phrases on the same level with logo
+   - font sizes / font-family / font color in inputs
+   - margins between Tags
+   - add some margin-bottom under the Pagination
+   - vertically align Rick & Morty's phrases on the same level with logo
+
 5. Looks like you don't have pre-commit hooks, add them please.
 6. Looks like you have linting errors, please fix.
 

@@ -4,12 +4,11 @@ import _ from "lodash";
 import Search from "../../components/Search";
 import Select from "../../components/Select";
 import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
-import Card from "../../components/Card";
 import { getCharacters } from "../../api";
-import Pagination from "../../components/Pagination";
 
 import "./Home.scss";
- 
+import CardList from "../../components/CardList/CardList";
+
 const statusOptions = [
   { valus: "", label: "all" },
   { value: "alive", label: "alive" },
@@ -48,7 +47,7 @@ function Home() {
   const loadCharacters = async (page = 0, params) => {
     const items = await getCharacters({ page: page + 1, ...params });
     if (items.error) {
-      console.log("Error:", items.error);
+      setCharacters([]);
     } else {
       setCharacters(items?.results);
       setPages(items?.info?.pages || 0);
@@ -60,7 +59,6 @@ function Home() {
     delayQuery(value);
   };
 
-  const renderCharactet = (character) => <Card {...character} key={character.id} />;
   return (
     <div className="Home">
       <h1 className="Home__header">
@@ -75,10 +73,7 @@ function Home() {
         <Select label="Status" value={status} handleSelect={setStatus} options={statusOptions} />
         <Select label="Gender " value={gender} handleSelect={setGender} options={genderOptions} />
       </div>
-      <div className="Home__resultContainer">
-        <div className="Home__cardList">{characters?.map(renderCharactet)}</div>
-        <Pagination pages={pages} setCurrentPage={setCurrentPage} currentPage={currentPage} />
-      </div>
+      <CardList characters={characters} pages={pages} setCurrentPage={setCurrentPage} currentPage={currentPage} />
     </div>
   );
 }

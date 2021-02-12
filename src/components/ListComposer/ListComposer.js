@@ -26,7 +26,7 @@ const ListComposer = ({ elements, getter, label, url }) => {
 
   const loadItems = async (ind) => {
     // Todo: is this a fetch call ? maybe something like getEpisode would be a better name
-    const item = await getter(ind); 
+    const item = await getter(ind);
     if (ind.length === 1) {
       setItems(Array(item));
     } else {

@@ -12,7 +12,6 @@ const Tag = ({ className, text, emoji }) => {
 
 Tag.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   emoji: PropTypes.string.isRequired,
 };
