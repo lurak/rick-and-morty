@@ -54,6 +54,8 @@ const DetailedUser = () => {
         <div className="DetailedUser__MainInfo">
           <Info header="Species" info={species} />
           <Info header="Origin" info={origin.name} />
+          {/* TODO: I bet, there is some prettier way to format it with date-fns
+          Probably a method called .format. Look in the docs :) */}
           <Info header="Birthday" info={String(parseJSON(created)).substring(3, 15)} />
           <Info header="Last known location" info={location.name} />
           <EpisodeInfo episode={episode} />

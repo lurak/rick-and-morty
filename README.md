@@ -6,6 +6,20 @@ Project use https://rickandmortyapi.com.
 Camel Case is used for variables.
 
 
+# TODO
+
+1. Maybe you can clean up default react README, e.g. starting from section "Read more"
+2. There is some filtering bug: when nothing is returned from the fetch call (or error is returned), it should be reflected in the Characters List - show error text instead of elements
+3. There is some small bug in pagination -- when you click on the last page button, the arrow should be disabled (currently I can click and I go to the next non-existing index). This is probably some error with list indexes :)
+4. Please, fix some styles:
+
+    - font sizes / font-family / font color in inputs
+    - margins between Tags
+    - add some margin-bottom under the Pagination
+    - vertically align Rick & Morty's phrases on the same level with logo
+5. Looks like you don't have pre-commit hooks, add them please.
+6. Looks like you have linting errors, please fix.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -3,6 +3,8 @@ import Photo from "../../assets/images/error.jpg";
 
 import "./ErrorPage.scss";
 
+// TODO: cool! :)
+
 const ErrorPage = () => {
   return (
     <div className="ErrorPage">

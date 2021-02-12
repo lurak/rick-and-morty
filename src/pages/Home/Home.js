@@ -9,7 +9,7 @@ import { getCharacters } from "../../api";
 import Pagination from "../../components/Pagination";
 
 import "./Home.scss";
-
+ 
 const statusOptions = [
   { valus: "", label: "all" },
   { value: "alive", label: "alive" },
