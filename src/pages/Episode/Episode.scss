@@ -17,7 +17,7 @@
   &__link_active {
     text-decoration: none;
     font-weight: bold;
-    color: black;
+    color: var(--text-dark);
   }
 
   &__link {
@@ -36,8 +36,6 @@
     display: inline-block;
     margin-right: 48px;
     line-height: 18px;
-    // TODO: remove if unneeded
-    // height: 470px;
   }
 
   &__MainInfo {

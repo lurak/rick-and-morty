@@ -7,7 +7,7 @@
   &__link_active {
     text-decoration: none;
     font-weight: bold;
-    color: black; // TODO: move to css var
+    color: var(--text-dark);
   }
 
   &__link {
