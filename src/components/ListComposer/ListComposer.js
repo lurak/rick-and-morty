@@ -7,6 +7,9 @@ import "./ListComposer.scss";
 // TODO: what does this element do?
 // Try to find a more comprehensive name :)
 const ListComposer = ({ elements, getter, label, url }) => {
+  // The main pupouse of this component to create list of episodes for character
+  // or list of characters for episode? all depends on function getter(two options getEpisode or getCharacter)
+  // Made for omiting of duplication of code for same CharacterList and EpisodeList how it was before
   const indexes = [];
   // TODO: it's cleaner and prettier with array map
   // And this way, you will return a new array, instead of modifying existing
